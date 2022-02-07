@@ -14,15 +14,15 @@ namespaces:
 #  - name: tl500-slides
 
 operators:
-  - name: codeready-workspaces2
+  - name: codeready-workspaces
     namespace: openshift-operators
     subscription:
-      channel: tech-preview-latest-all-namespaces
+      channel: latest
       approval: Automatic
-      operatorName: codeready-workspaces2
+      operatorName: codeready-workspaces
       sourceName: redhat-operators
       sourceNamespace: openshift-marketplace
-      csv: crwoperatorallnamespaces.v2.13.101-0.1639048038.p
+      csv: crwoperator.v2.14.0
     operatorgroup:
       create: false
 
@@ -162,10 +162,11 @@ sealed-secrets:
 
 userworkloadmonitoring: true
 
-stackrox:
+stackrox-chart:
   enabled: true
-  clusterName: tl500
-  namespace: stackrox
+  stackrox:
+    clusterName: tl500
+    namespace: stackrox
 
 gitops-operator:
   enabled: true
